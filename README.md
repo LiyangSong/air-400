@@ -2,7 +2,9 @@
 
 This is the official repository of our paper:
 
-Song, L., Bishnoi, H.*, Manne, S.K.R., Ostadabbas, S., Taylor, B.J., Wan, M., “Overcoming Small Data Limitations in Video-Based Infant Respiration Estimation." [arXiv preprint] *equal contribution 
+
+> Song, L.\*, Bishnoi, H.\*, Manne, S.K.R., Ostadabbas, S., Taylor, B.J., Wan, M., “Overcoming Small Data Limitations in Video-Based Infant Respiration Estimation" (*equal contribution). Under review, [arXiv preprint].
+
 
 ````
 [ADD BIBTEX CITATION]
