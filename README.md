@@ -34,7 +34,7 @@ git clone https://github.com/pathak22/pyflow.git
 
 Use `infer.py` to preprocess input video(s) and run a trained model for respiration rate estimation.
 
-1. Preparation
+#### 1. Preparation
 - Download [trained model](https://drive.google.com/drive/folders/1kjSAF9Dt24D670cwBgc-uXCz8WYTaulq?usp=drive_link) and [ROI detector](https://drive.google.com/drive/folders/1k0BHMGXAXIdmOYyt3iGzbUBH_sEGVcAk?usp=drive_link) files.
 - Fill the YAML `DATA_PATH` fields. 
   - Set paths for cache directory and output directory.
@@ -52,7 +52,7 @@ DATA_PATH:
   VIDEO_DIR: /absolute/path/to/videos/
 ```
 
-2. Example run:
+#### 2. Example run
 
 ```bash
 python infer.py \
@@ -60,15 +60,14 @@ python infer.py \
   --checkpoint /path/to/model_dir/VIRENet_best.pth \
 ```
 
-3. Outputs:
-- Per-video JSON under `OUTPUT_DIR/inference/` with RR stats per chunk and mean/std.
+#### 3. Outputs
+- A summary JSON with RR stats under `OUTPUT_DIR/inference/` for all processed videos.
 - Logs saved under `OUTPUT_DIR/logs/
-- A summary JSON across all processed videos.
 - (Optional) Waveform CSV and PNG can be enabled in future; current version focuses on RR stats.
 
 ## Annotated Infant Respiration Dataset (AIR-400)
 
-(Link to dataset, with basic description of how it is organized.) 
+The [AIR-400 dataset](https://drive.google.com/drive/folders/12BCJ2TNjAquMHTr3A60p2sQJ9Gp7CRDt?usp=drive_link) contains two folders: `AIR_125`, which includes video and annotation files for 8 subjects from the original AIR-125 dataset, and `AIR_400`, which contains files for 10 newly added subjects in the AIR-400 dataset.
 
 ## Reproducing Paper Results
 
