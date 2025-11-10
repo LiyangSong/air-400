@@ -62,8 +62,8 @@ python infer.py \
 
 #### 3. Outputs
 - A summary JSON with RR stats under `OUTPUT_DIR/inference/` for all processed videos.
-- Logs saved under `OUTPUT_DIR/logs/
-- (Optional) Waveform CSV and PNG can be enabled in future; current version focuses on RR stats.
+- Logs saved under `OUTPUT_DIR/logs/`
+- (Optional) Waveform CSV and PNG can be enabled in the future; current version focuses on RR stats.
 
 ## Annotated Infant Respiration Dataset (AIR-400)
 
