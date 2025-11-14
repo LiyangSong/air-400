@@ -43,30 +43,20 @@ def _save_pred(out_dir, base, fs, pred_seq, logger):
     hdf5_path = os.path.join(out_dir, f"{base}_pred.hdf5")
     with h5py.File(hdf5_path, 'w') as f:
         f.create_dataset('time_sec', data=t, compression='gzip')
-        f.create_dataset('pred', data=pred_seq, compression='gzip')
+        f.create_dataset('respiration', data=pred_seq, compression='gzip')
     logger.info(f"Saved hdf5 format prediction to {hdf5_path}")
-
-    csv_path = os.path.join(out_dir, f"{base}_pred.csv")
-    np.savetxt(
-        csv_path,
-        np.stack([t, pred_seq], axis=1),
-        delimiter=",",
-        header="time_sec,pred",
-        comments=""
-    )
-    logger.info(f"Saved csv format prediction  to {csv_path}")
 
     fig, ax = plt.subplots(figsize=(8, 3))
     ax.plot(t, pred_seq, label='pred', linewidth=1.0)
     ax.set_xlabel('Time (s)')
-    ax.set_ylabel('Prediction')
+    ax.set_ylabel('Respiration')
     fig.tight_layout()
     png_path = os.path.join(out_dir, f"{base}_pred.png")
     fig.savefig(png_path, dpi=200)
     plt.close(fig)
     logger.info(f"Saved waveform plot of prediction to {png_path}")
 
-    return hdf5_path, csv_path, png_path
+    return hdf5_path, png_path
 
 
 def build_model(config, logger):
@@ -287,7 +277,7 @@ def main():
         pred_seq = metrics.get('pred_seq', np.array([]))
 
         if pred_seq.size:
-            hdf5_path, csv_path, png_path = _save_pred(
+            hdf5_path, png_path = _save_pred(
                 vp_out_dir,
                 base,
                 fs,
@@ -296,7 +286,6 @@ def main():
             )
 
             result['hdf5_path'] = hdf5_path
-            result['csv_path'] = csv_path
             result['png_path'] = png_path
             logger.info(f"Saved waveform hdf5/csv/png for {vp}")
 
