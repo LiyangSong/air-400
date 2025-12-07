@@ -82,7 +82,7 @@ git clone https://github.com/pathak22/pyflow.git
 
 
 #### 1. Preparation
-- Download [trained model](https://drive.google.com/drive/folders/1kjSAF9Dt24D670cwBgc-uXCz8WYTaulq?usp=drive_link) and [ROI detector](https://drive.google.com/drive/folders/1k0BHMGXAXIdmOYyt3iGzbUBH_sEGVcAk?usp=drive_link) files.
+- Download a [trained model](https://drive.google.com/drive/folders/1ohYbeIJG85cpop3yhBtXaCfQ3ooWZMsk?usp=sharing) and [ROI detector](https://drive.google.com/drive/folders/1PQo7md-hW1x76l_GaBnWH8_H8U7rxpOt?usp=share_link) files.
 - Fill the `DATA_PATH` fields of config YAML in `configs/inference` folder. 
   - Set path for **output** directory.
   - Set valid **detector** paths (YOLO weights) if ROI cropping is enabled. Otherwise, set `DO_CROP_INFANT_REGION: False`.
@@ -116,13 +116,13 @@ Example run:
 
 ## 📚 Annotated Infant Respiration Dataset (AIR-400)
 
-The [**AIR-400** dataset](https://drive.google.com/drive/folders/12BCJ2TNjAquMHTr3A60p2sQJ9Gp7CRDt?usp=drive_link) consists of two parts:
+The [**AIR-400** dataset](https://drive.google.com/drive/folders/1-bYcnAFy15y_sff9-izpPSGS-cinzEut?usp=share_link) consists of two parts:
 
-- **AIR_125** — original dataset (8 subjects)
+- **AIR-125** — original dataset (125 videos from 8 subjects, labeled S01 through S08, with S06, S07, and 08 provided as public web links)
 
-- **AIR_400** — expanded dataset (with 10 additional subjects from the same study)
+- **AIR-400** — expanded dataset (275 videos from 10 additional subjects from the same study, labeled S01 through S10, but not the same as the ones from AIR-125)
 
-Each subject directory contains synchronized **video files (.mp4)** and **breathing signal annotations (.hdf5)**.
+Each subject directory contains synchronized **video files (.mp4)** and **breathing signal annotations (.hdf5)**. 
 
 In the `AIR_125` folder, each subject directory (`S01`, `S02`, ... `S08`) includes paired video and annotation files:
 ```
@@ -180,7 +180,7 @@ wandb login
 ```
 Set `USE_WANDB: True` in YAML file.
 
-#### 2. Download [AIR-400 dataset](https://drive.google.com/drive/folders/12BCJ2TNjAquMHTr3A60p2sQJ9Gp7CRDt?usp=drive_link) and [ROI detector](https://drive.google.com/drive/folders/1k0BHMGXAXIdmOYyt3iGzbUBH_sEGVcAk?usp=drive_link) files.
+#### 2. Download [AIR-400 dataset](https://drive.google.com/drive/folders/1-bYcnAFy15y_sff9-izpPSGS-cinzEut?usp=share_link) and [ROI detector](https://drive.google.com/drive/folders/1PQo7md-hW1x76l_GaBnWH8_H8U7rxpOt?usp=sharing) files.
 
 #### 3. Fill the YAML `DATA_PATH` fields.
 
